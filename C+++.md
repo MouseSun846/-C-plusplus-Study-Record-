@@ -537,28 +537,38 @@ if(res){
   | Engine::result_type | 此引擎生成的unsigned整数类型               |
   | e.discard(u)        | 将引擎推进u步；u的类型为unsigned long long |
 
-  ## IO流
+## IO流
 
-  控制布尔值的格式   boolalpha
+控制布尔值的格式   boolalpha
 
-  指定进制 hex oct dec  showbase/noshowbase(带格式输出） setbase(b)设置输出为b进制
+指定进制 hex oct dec  showbase/noshowbase(带格式输出） setbase(b)设置输出为b进制
 
-  设置浮点数精度  cout.setprecision(n)  setprecision(n) 
+设置浮点数精度  cout.setprecision(n)  setprecision(n) 
 
-  
 
-  ## 异常管理
 
-  noexcept
+## 异常管理
 
-  如果一个虚函数承诺了它不会抛出异常，则后续派生出来的虚函数也不允许抛出异常。
+noexcept
 
-  如果基类的虚函数允许抛出异常，则派生类的对应的函数允许抛出异常，也可以不允许抛出异常。
+如果一个虚函数承诺了它不会抛出异常，则后续派生出来的虚函数也不允许抛出异常。
 
-  
-  
-  
-  
-  
-  
-  
+如果基类的虚函数允许抛出异常，则派生类的对应的函数允许抛出异常，也可以不允许抛出异常。
+
+## 异常类层次
+
+* exception
+  * bad_cast
+  * runtime_error
+    * overflow_error
+    * underflow_error
+    * range_error
+  * logic_error
+    * domain_error
+    * invalid_argument
+    * out_of_range
+    * length_error
+  * bad_alloc
+
+
+
