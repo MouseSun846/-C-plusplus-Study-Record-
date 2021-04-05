@@ -598,3 +598,45 @@ noexcept
   1. 先执行元素对应的析构函数
   2. 编译器调用名为operator delete（或者operator delete[]）的标准库函数释放内存空间
 
+## typeid运算符
+
+当typeid作用于指针时（而非指针所指的对象），返回的结果时该指针的静态编译时类型。
+
+## 枚举
+
+```c++
+enum color{red,yellow,blue}
+```
+
+默认情况下限定作用域enum成员类型int
+
+指定类型 ：
+
+```c++
+enum intValues : unsigned long long{
+	charTyp = 255, shortTyp = 65535, intTyp = 65535,
+	longTyp = 4294967295UL,
+	long_longTyp = 18446744073709551615ULL
+};
+```
+
+成员运算符  .    ->
+
+指针访问运算符 .*  ->*  可以解引用指针并获得该对象的成员
+
+## 位域
+
+```c++
+class File{
+	int mode:2;
+	int modified:1;
+	int prot_owner:3;
+    int prot_group:3;
+    int prot_world:3;
+}
+```
+
+## volatile限定符
+
+保持可见性
+
