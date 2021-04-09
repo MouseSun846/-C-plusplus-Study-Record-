@@ -640,3 +640,42 @@ class File{
 
 保持可见性
 
+## Vscode配置C++多文件编译
+
+```json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "g++",
+            "type": "shell",
+            "command": "D:\\posix\\MinGW64\\bin\\g++.exe",
+            "args": [ 
+                ​        "-g",
+  
+                ​        "${fileDirname}\\*.cpp",
+                
+                ​        "-o",
+                
+                ​        "${fileDirname}\\output\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+        ​      "options": {
+
+        ​        "cwd": "D:\\posix\\MinGW64\\bin"
+
+        ​      },
+
+        ​      "problemMatcher": [
+
+        ​        "$g++"
+
+        ​      ]            
+
+        }
+    ]
+}
+```
+
