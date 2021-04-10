@@ -319,9 +319,11 @@ weak_ptr 弱引用，指向shared_ptr 所管理 的对象；一种不控制所�
 
 ## 拷贝构造函数
 
-=default  显示地要求编译器生成合成的版本
+* =default  显示地要求编译器生成合成的版本
 
-=delete 组织拷贝  注：析构函数不能是被删除的，否则无法销毁此类型的对象。
+* =delete 组织拷贝  注：析构函数不能是被删除的，否则无法销毁此类型的对象。
+
+* 声明为explicit的构造函数，可以用来阻止隐式类型转换，但是也可以用显示类型转换
 
 ## 左值引用
 
@@ -657,27 +659,27 @@ class File{
             "type": "shell",
             "command": "D:\\posix\\MinGW64\\bin\\g++.exe",
             "args": [ 
-                ​        "-g",
-  
-                ​        "${fileDirname}\\*.cpp",
+                       "-g",
+   						"-fexec-charset=GBK",   // 处理mingw中文编码问题
+                        "-finput-charset=UTF-8",// 处理mingw中文编码问题       
+                        "${fileDirname}\\*.cpp",
                 
-                ​        "-o",
+                        "-o",
                 
-                ​        "${fileDirname}\\output\\${fileBasenameNoExtension}.exe"
+                        "${fileDirname}\\output\\${fileBasenameNoExtension}.exe"
             ],
             "group": "build",
-        ​      "options": {
+              "options": {
 
-        ​        "cwd": "D:\\posix\\MinGW64\\bin"
+                "cwd": "D:\\posix\\MinGW64\\bin"
 
-        ​      },
+              },
 
-        ​      "problemMatcher": [
+              "problemMatcher": [
 
-        ​        "$g++"
+               "$g++"
 
-        ​      ]            
-
+              ]            
         }
     ]
 }
