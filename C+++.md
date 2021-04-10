@@ -685,3 +685,16 @@ class File{
 }
 ```
 
+## const
+
+```c++
+const char* p; //指针非常量，内容常量
+char* const p; //指针常量，内容非常量
+const char* const p; //指针常量，内容常量
+```
+
+## virtual析构函数
+
+* 任何class只要带有virtual 函数都几乎确定 应该也有一个virtual析构函数。
+
+* 析构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该通过try--catch进行捕获 
